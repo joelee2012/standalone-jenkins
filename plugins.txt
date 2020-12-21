@@ -1,0 +1,8 @@
+antisamy-markup-formatter
+blueocean
+cloudbees-folder
+configuration-as-code
+credentials
+docker-plugin
+docker-workflow
+workflow-aggregator

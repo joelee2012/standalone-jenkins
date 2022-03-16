@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.319.1-lts-alpine
+FROM jenkins/jenkins:2.332.1-lts-alpine
 
 LABEL OWNER="Joe Lee"
 LABEL MAINTAINER="Joe Lee"

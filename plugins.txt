@@ -1,4 +1,3 @@
-android-emulator
 ansicolor
 antisamy-markup-formatter
 artifactory
@@ -30,10 +29,11 @@ kubernetes-cli
 kubernetes-client-api
 kubernetes-credentials-provider
 ldap
-matrix-auth:2.6.11
+matrix-auth
 next-build-number
 performance
 pipeline-maven
+pipeline-stage-view
 prometheus
 robot
 role-strategy

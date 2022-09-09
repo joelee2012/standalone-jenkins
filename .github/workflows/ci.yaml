@@ -30,6 +30,26 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
+          push: false
+          tags: |
+            ${{ github.repository }}:latest
+            ${{ github.repository }}:${{ steps.get-docker-tag.outputs.tag }}
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10
+
+      - name: Test docker image
+        run: |
+          pip install -U pytest api4jenkins
+          DOCKER_IMAGE=${{ github.repository }}:latest pytest -v tests/test_image.py
+
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
           push: true
           tags: |
             ${{ github.repository }}:latest

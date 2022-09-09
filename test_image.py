@@ -26,7 +26,7 @@ def host():
 
 
 def plugins():
-    here = Path(__file__).parent
+    here = Path(__file__)
     with open(here.parent.joinpath('plugins.txt')) as fd:
         for line in fd:
             yield line.strip()

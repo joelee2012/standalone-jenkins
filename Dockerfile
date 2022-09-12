@@ -3,8 +3,6 @@ FROM jenkins/jenkins:2.361.1-lts-alpine
 LABEL OWNER="Joe Lee"
 LABEL MAINTAINER="Joe Lee"
 LABEL EMAIL="lj_2005@163.com"
-LABEL REPO="https://github.com/joelee2012/standalone-jenkins"
-
 USER root
 RUN apk update && \
     apk add --no-cache docker-cli \

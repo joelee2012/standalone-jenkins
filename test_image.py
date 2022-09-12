@@ -26,10 +26,11 @@ def host():
 
 
 def plugins():
-    here = Path(__file__)
-    with open(here.parent.joinpath('plugins.txt')) as fd:
+    here = Path(__file__).parent
+    with open(here.joinpath('plugins.txt')) as fd:
         for line in fd:
-            yield line.strip()
+            if line := line.strip():
+                yield line
 
 
 @pytest.mark.parametrize('plugin', plugins())

@@ -1,8 +1,8 @@
-# standalone-jenkins
-The [latest Jenkins LTS Docker image](https://www.jenkins.io/changelog-stable/) with preinstalled plugins and Docker in Docker client.
+# Standalone Jenkins
+This docker image is based on [latest Jenkins LTS Docker image](https://www.jenkins.io/changelog-stable/) with preinstalled plugins and docker client.
 
 
-Following are preinstalled plugins without listing dependencies
+Preinstalled plugins are listed without dependencies
 ```
 ansicolor
 antisamy-markup-formatter
@@ -53,5 +53,5 @@ workflow-aggregator
 
 # Usage
 
-## standalon mode
-install docker compose and run `docker-compose up`
+## start with docker-compose
+install docker-compose and run `docker-compose up -d`, then access jenkins with http://localhost:8080

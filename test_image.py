@@ -13,10 +13,7 @@ def host():
     container = run_cmd(['docker', 'run', '--rm', '-d',
                         '-p', '8080:8080', os.environ['DOCKER_IMAGE']])
     container = container.decode().strip()
-    while True:
-        if b'Jenkins is fully up and running' in \
-                run_cmd(['docker', 'logs', container], stderr=subprocess.STDOUT):
-            break
+    while b'Jenkins is fully up and running' not in run_cmd(['docker', 'logs', container], stderr=subprocess.STDOUT):
         time.sleep(1)
     passwd = run_cmd(['docker', 'exec', container,
                       'cat', '/var/jenkins_home/secrets/initialAdminPassword'])

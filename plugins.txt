@@ -1,3 +1,4 @@
+allure-jenkins-plugin
 ansicolor
 antisamy-markup-formatter
 artifactory

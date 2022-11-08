@@ -23,7 +23,9 @@ jobs:
 
       - name: Get Docker tags
         id: get-docker-tag
-        run: echo "::set-output name=tag::$(sed -r '/FROM/!d;s/.*://g' Dockerfile)"
+        run: |
+          tag=$(sed -r '/FROM/!d;s/.*://g' Dockerfile)
+          echo "IMAGE_TAG=$tag" >> $GITHUB_OUTPUT
 
       - name: Build docker image
         uses: docker/build-push-action@v3
@@ -33,10 +35,10 @@ jobs:
           push: false
           tags: |
             ${{ github.repository }}:latest
-            ${{ github.repository }}:${{ steps.get-docker-tag.outputs.tag }}
+            ${{ github.repository }}:${{ steps.get-docker-tag.outputs.IMAGE_TAG }}
 
       - name: Set up Python 3.10
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: "3.10"
 
@@ -54,4 +56,4 @@ jobs:
           push: true
           tags: |
             ${{ github.repository }}:latest
-            ${{ github.repository }}:${{ steps.get-docker-tag.outputs.tag }}
+            ${{ github.repository }}:${{ steps.get-docker-tag.outputs.IMAGE_TAG }}

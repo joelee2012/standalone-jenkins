@@ -4,7 +4,7 @@ services:
     build: ./
     image: "joelee2012/standalone-jenkins:latest"
     ports:
-      - "9090:8080"
+      - "8080:8080"
     environment:
       - DOCKER_HOST=unix:///var/run/docker.sock
     restart: on-failure

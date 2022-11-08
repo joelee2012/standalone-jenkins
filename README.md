@@ -4,6 +4,7 @@ This docker image is based on [latest Jenkins LTS Docker image](https://www.jenk
 
 Preinstalled plugins are listed without dependencies
 ```
+allure-jenkins-plugin
 ansicolor
 antisamy-markup-formatter
 artifactory

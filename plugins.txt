@@ -2,6 +2,7 @@ allure-jenkins-plugin
 ansicolor
 antisamy-markup-formatter
 artifactory
+badge
 blueocean
 blueocean-jira
 build-name-setter

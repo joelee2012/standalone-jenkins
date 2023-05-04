@@ -2,8 +2,6 @@ name: ci
 
 on:
   push:
-    branches:
-      - main
   schedule:
     - cron: "0 0 * * *"
 
@@ -29,8 +27,8 @@ jobs:
       - name: Get Docker tags
         id: get-docker-tag
         run: |
-          tag=$(sed -r '/FROM/!d;s/.*://g' Dockerfile)
-          echo "IMAGE_TAG=$tag" >> $GITHUB_OUTPUT
+          version=$(curl -L https://www.jenkins.io/changelog-stable/rss.xml | grep '<title>Jenkins' | head -1 | grep -o [0-9.]*)
+          echo "IMAGE_TAG=$version" >> $GITHUB_OUTPUT
 
       - name: Build docker image
         uses: docker/build-push-action@v3
@@ -38,6 +36,8 @@ jobs:
           context: .
           file: ./Dockerfile
           push: false
+          build-args: |
+            VERSION=${{ steps.get-docker-tag.outputs.IMAGE_TAG }}
           tags: |
             ${{ github.repository }}:latest
             ${{ github.repository }}:${{ steps.get-docker-tag.outputs.IMAGE_TAG }}
@@ -59,6 +59,8 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
+          build-args: |
+            VERSION=${{ steps.get-docker-tag.outputs.IMAGE_TAG }}
           tags: |
             ${{ github.repository }}:latest
             ${{ github.repository }}:${{ steps.get-docker-tag.outputs.IMAGE_TAG }}

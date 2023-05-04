@@ -1,4 +1,6 @@
-FROM jenkins/jenkins:2.387.2-lts-alpine
+ARG VERSION
+FROM jenkins/jenkins:${VERSION}-lts-alpine
+ARG VERSION
 
 LABEL OWNER="Joe Lee"
 LABEL MAINTAINER="Joe Lee"

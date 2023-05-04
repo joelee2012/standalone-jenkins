@@ -28,7 +28,7 @@ jobs:
         id: get-docker-tag
         run: |
           version=$(curl -L https://www.jenkins.io/changelog-stable/rss.xml | grep '<title>Jenkins' | head -1 | grep -o [0-9.]*)
-          echo "IMAGE_TAG=$version" >> $GITHUB_OUTPUT
+          echo "IMAGE_TAG=${version}-lts-alpine" >> $GITHUB_OUTPUT
 
       - name: Build docker image
         uses: docker/build-push-action@v3
@@ -37,7 +37,7 @@ jobs:
           file: ./Dockerfile
           push: false
           build-args: |
-            VERSION=${{ steps.get-docker-tag.outputs.IMAGE_TAG }}
+            IMAGE_TAG=${{ steps.get-docker-tag.outputs.IMAGE_TAG }}
           tags: |
             ${{ github.repository }}:latest
             ${{ github.repository }}:${{ steps.get-docker-tag.outputs.IMAGE_TAG }}
@@ -60,7 +60,7 @@ jobs:
           file: ./Dockerfile
           push: true
           build-args: |
-            VERSION=${{ steps.get-docker-tag.outputs.IMAGE_TAG }}
+            IMAGE_TAG=${{ steps.get-docker-tag.outputs.IMAGE_TAG }}
           tags: |
             ${{ github.repository }}:latest
             ${{ github.repository }}:${{ steps.get-docker-tag.outputs.IMAGE_TAG }}

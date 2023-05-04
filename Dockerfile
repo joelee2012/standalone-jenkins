@@ -1,6 +1,6 @@
-ARG VERSION
-FROM jenkins/jenkins:${VERSION}-lts-alpine
-ARG VERSION
+ARG IMAGE_TAG
+FROM jenkins/jenkins:${IMAGE_TAG}
+ARG IMAGE_TAG
 
 LABEL OWNER="Joe Lee"
 LABEL MAINTAINER="Joe Lee"

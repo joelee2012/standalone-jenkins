@@ -8,6 +8,7 @@ allure-jenkins-plugin
 ansicolor
 antisamy-markup-formatter
 artifactory
+badge
 blueocean
 blueocean-jira
 build-name-setter
@@ -40,6 +41,7 @@ matrix-auth
 next-build-number
 performance
 pipeline-maven
+pipeline-npm
 pipeline-stage-view
 prometheus
 robot
@@ -53,6 +55,9 @@ workflow-aggregator
 ```
 
 # Usage
-
+## Installation
+```
+docker pull joelee2012/standalone-jenkins:2.387.2-lts-alpine
+```
 ## start with docker-compose
 install docker-compose and run `docker-compose up -d`, then access jenkins with http://localhost:8080

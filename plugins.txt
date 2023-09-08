@@ -21,6 +21,7 @@ docker-plugin
 docker-workflow
 email-ext
 embeddable-build-status
+gitlab-oauth
 gitlab-branch-source
 gitlab-plugin
 jacoco
@@ -31,6 +32,7 @@ kubernetes-cli
 kubernetes-client-api
 kubernetes-credentials-provider
 ldap
+markdown-formatter
 matrix-auth
 next-build-number
 performance

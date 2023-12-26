@@ -36,7 +36,7 @@ markdown-formatter
 matrix-auth
 next-build-number
 performance
-pipeline-maven
+pipeline-maven:1330.v18e473854496
 pipeline-npm
 pipeline-stage-view
 prometheus

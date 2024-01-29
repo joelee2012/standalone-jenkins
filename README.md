@@ -14,11 +14,12 @@ blueocean-jira
 build-name-setter
 cloudbees-disk-usage-simple
 cloudbees-folder
-code-coverage-api
 config-file-provider
 configuration-as-code
 configuration-as-code-groovy
 copyartifact
+coverage
+coverage-badges-extension
 credentials
 dashboard-view
 dependency-check-jenkins-plugin
@@ -28,6 +29,7 @@ docker-workflow
 email-ext
 embeddable-build-status
 gitlab-branch-source
+gitlab-oauth
 gitlab-plugin
 jacoco
 jira
@@ -37,6 +39,7 @@ kubernetes-cli
 kubernetes-client-api
 kubernetes-credentials-provider
 ldap
+markdown-formatter
 matrix-auth
 next-build-number
 performance

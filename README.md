@@ -19,7 +19,6 @@ configuration-as-code
 configuration-as-code-groovy
 copyartifact
 coverage
-coverage-badges-extension
 credentials
 dashboard-view
 dependency-check-jenkins-plugin

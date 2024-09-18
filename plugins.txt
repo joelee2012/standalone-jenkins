@@ -36,7 +36,6 @@ markdown-formatter
 matrix-auth
 next-build-number
 performance
-pipeline-graph-view
 pipeline-maven
 pipeline-npm
 pipeline-stage-view

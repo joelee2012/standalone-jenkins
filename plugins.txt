@@ -35,6 +35,7 @@ ldap
 markdown-formatter
 matrix-auth
 next-build-number
+oss-symbols-api
 performance
 pipeline-maven
 pipeline-npm

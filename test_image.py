@@ -15,7 +15,7 @@ def host():
     container = container.decode().strip()
     while b'Jenkins is fully up and running' not in run_cmd(['docker', 'logs', container], stderr=subprocess.STDOUT):
         time.sleep(1)
-    time.sleep(5)
+    time.sleep(10)
     passwd = run_cmd(['docker', 'exec', container,
                       'cat', '/var/jenkins_home/secrets/initialAdminPassword'])
     yield Jenkins('http://127.0.0.1:8080',
@@ -40,8 +40,6 @@ def test_plugin_installed(host, plugin):
         assert p.short_name == name
         assert p.version == version
     else:
-        if plugin in ['pipeline-npm', 'oss-symbols-api']:
-            return
         p = host.plugins.get(plugin)
         assert p is not None, f"can't find plugin {plugin}"
         assert p.short_name == plugin

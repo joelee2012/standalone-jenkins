@@ -1,4 +1,4 @@
-ARG IMAGE_TAG
+ARG IMAGE_TAG=latest
 FROM jenkins/jenkins:${IMAGE_TAG}
 ARG IMAGE_TAG
 

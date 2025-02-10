@@ -24,7 +24,6 @@ embeddable-build-status
 gitlab-branch-source
 gitlab-oauth
 gitlab-plugin
-jacoco
 jira
 job-dsl
 kubernetes

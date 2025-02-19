@@ -37,6 +37,7 @@ matrix-auth
 next-build-number
 oss-symbols-api
 performance
+pipeline-graph-view
 pipeline-maven
 pipeline-npm
 pipeline-stage-view

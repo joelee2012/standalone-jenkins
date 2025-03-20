@@ -64,7 +64,7 @@ jobs:
       - name: Test docker image
         run: |
           pip install -U pytest api4jenkins
-          DOCKER_IMAGE=${{ github.repository }}:latest pytest -v test_image.py
+          DOCKER_IMAGE=${{ github.repository }}:${{ steps.get-docker-tag.outputs.IMAGE_TAG }} pytest -v test_image.py
 
       - name: Push docker image
         uses: docker/build-push-action@v6

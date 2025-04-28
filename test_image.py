@@ -10,7 +10,7 @@ from pathlib import Path
 
 @pytest.fixture(scope='session')
 def host():
-    container = run_cmd(['docker', 'run', '--rm', '-d',
+    container = run_cmd(['docker', 'run', '--rm', '-d', '--pull=never',
                         '-p', '8080:8080', os.environ['DOCKER_IMAGE']])
     container = container.decode().strip()
     while b'Jenkins is fully up and running' not in run_cmd(['docker', 'logs', container], stderr=subprocess.STDOUT):

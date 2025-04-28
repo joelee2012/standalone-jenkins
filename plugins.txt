@@ -24,6 +24,7 @@ embeddable-build-status
 gitlab-branch-source
 gitlab-oauth
 gitlab-plugin
+jacoco
 jira
 job-dsl
 kubernetes
@@ -39,6 +40,7 @@ performance
 pipeline-maven
 pipeline-npm
 pipeline-stage-view
+pipeline-graph-view
 prometheus
 robot
 role-strategy

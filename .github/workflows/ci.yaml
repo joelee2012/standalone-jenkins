@@ -47,7 +47,7 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          push: false
+          push: true
           build-args: |
             IMAGE_TAG=${{ steps.get-docker-tag.outputs.IMAGE_TAG }}
           tags: |
@@ -63,24 +63,25 @@ jobs:
 
       - name: Test docker image
         run: |
+          docker images
           pip install -U pytest api4jenkins
-          DOCKER_IMAGE=${{ github.repository }}:${{ steps.get-docker-tag.outputs.IMAGE_TAG }} pytest -v test_image.py
+          DOCKER_IMAGE=ghcr.io/${{ github.repository }}:${{ steps.get-docker-tag.outputs.IMAGE_TAG }} pytest -v test_image.py
 
-      - name: Push docker image
-        uses: docker/build-push-action@v6
-        id: push
-        if: github.ref_name == 'main'
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          build-args: |
-            IMAGE_TAG=${{ steps.get-docker-tag.outputs.IMAGE_TAG }}
-          tags: |
-            ${{ github.repository }}:latest
-            ${{ github.repository }}:${{ steps.get-docker-tag.outputs.IMAGE_TAG }}
-            ghcr.io/${{ github.repository }}:latest
-            ghcr.io/${{ github.repository }}:${{ steps.get-docker-tag.outputs.IMAGE_TAG }}
+          #      - name: Push docker image
+          #        uses: docker/build-push-action@v6
+          #        id: push
+          #        if: github.ref_name == 'main'
+          #        with:
+          #          context: .
+          #          file: ./Dockerfile
+          #          push: true
+          #          build-args: |
+          #            IMAGE_TAG=${{ steps.get-docker-tag.outputs.IMAGE_TAG }}
+          #          tags: |
+          #            ${{ github.repository }}:latest
+          #            ${{ github.repository }}:${{ steps.get-docker-tag.outputs.IMAGE_TAG }}
+          #            ghcr.io/${{ github.repository }}:latest
+          #            ghcr.io/${{ github.repository }}:${{ steps.get-docker-tag.outputs.IMAGE_TAG }}
 
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v2

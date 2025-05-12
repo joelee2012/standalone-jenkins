@@ -44,6 +44,7 @@ jobs:
 
       - name: Build docker image
         uses: docker/build-push-action@v6
+        id: build
         with:
           context: .
           file: ./Dockerfile
@@ -87,5 +88,5 @@ jobs:
         uses: actions/attest-build-provenance@v2
         with:
           subject-name: ghcr.io/${{ github.repository }}
-          subject-digest: ${{ steps.push.outputs.digest }}
+          subject-digest: ${{ steps.build.outputs.digest }}
           push-to-registry: true

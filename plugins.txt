@@ -16,7 +16,6 @@ coverage
 credentials
 dashboard-view
 dependency-check-jenkins-plugin
-dingding-notifications
 docker-plugin
 docker-workflow
 email-ext
@@ -35,6 +34,7 @@ ldap
 markdown-formatter
 matrix-auth
 next-build-number
+nodejs
 oss-symbols-api
 performance
 pipeline-maven

@@ -20,6 +20,7 @@ docker-plugin
 docker-workflow
 email-ext
 embeddable-build-status
+file-parameters
 gitlab-branch-source
 gitlab-oauth
 gitlab-plugin

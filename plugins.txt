@@ -26,6 +26,7 @@ gitlab-oauth
 gitlab-plugin
 jacoco
 jira
+jira-steps
 job-dsl
 kubernetes
 kubernetes-cli

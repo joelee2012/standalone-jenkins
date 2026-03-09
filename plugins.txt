@@ -24,6 +24,7 @@ file-parameters
 gitlab-branch-source
 gitlab-oauth
 gitlab-plugin
+http_request
 jacoco
 jira
 jira-steps

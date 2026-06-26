@@ -37,6 +37,7 @@ markdown-formatter
 matrix-auth
 next-build-number
 nodejs
+oic-auth
 oss-symbols-api
 performance
 pipeline-maven

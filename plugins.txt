@@ -3,8 +3,6 @@ ansicolor
 antisamy-markup-formatter
 artifactory
 badge
-blueocean
-blueocean-jira
 build-name-setter
 cloudbees-disk-usage-simple
 cloudbees-folder
